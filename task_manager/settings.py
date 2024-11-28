@@ -110,7 +110,9 @@ AUTH_PASSWORD_VALIDATORS = [
 CORS_ORIGIN_WHITELIST= [
     'http://localhost:3000'
 ]
-    
+CORS_ALLOWED_ORIGINS = [
+    'https://your-netlify-site.netlify.app',
+]   
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
