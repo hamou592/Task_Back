@@ -111,7 +111,7 @@ CORS_ORIGIN_WHITELIST= [
     'http://localhost:3000'
 ]
 CORS_ALLOWED_ORIGINS = [
-    'https://your-netlify-site.netlify.app',
+    'https://task-manager-nasro.netlify.app/',
 ]   
 
 # Internationalization
