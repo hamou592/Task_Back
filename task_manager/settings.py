@@ -25,12 +25,7 @@ SECRET_KEY = 'django-insecure-a-m4y!tbt)w#i3_12r#b(^0f-o3-m*rcnon7)y4s2$ixq&@4%3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    'localhost',  # For local development
-    '127.0.0.1',  # For local development
-    'task-back-b91n.onrender.com'  # Your Render-provided domain
-]
-
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -55,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'task_manager.urls'
@@ -108,7 +104,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 CORS_ORIGIN_WHITELIST= [
-    'http://localhost:3000'
+    'http://localhost:3000',
+    'https://task-manager-nasro.netlify.app/',
 ]
 CORS_ALLOWED_ORIGINS = [
     'https://task-manager-nasro.netlify.app/',
@@ -129,8 +126,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
-
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
